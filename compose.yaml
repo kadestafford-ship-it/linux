@@ -1,6 +1,8 @@
 services:
   desktop:
-    image: kasmweb/ubuntu-jammy-desktop:1.17.0
+    build:
+      context: .
+      dockerfile: Dockerfile.desktop
     container_name: linux-desktop
     environment:
       VNC_PW: ${VNC_PASSWORD:-linuxdesktop}
