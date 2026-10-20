@@ -1,0 +1,8 @@
+{
+  "remote.portsAttributes": {
+    "6901": {
+      "label": "Linux desktop (noVNC)",
+      "protocol": "https"
+    }
+  }
+}

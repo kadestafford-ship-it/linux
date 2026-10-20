@@ -1,0 +1,15 @@
+{
+  "name": "Linux Desktop",
+  "image": "mcr.microsoft.com/devcontainers/universal:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  },
+  "forwardPorts": [6901],
+  "portsAttributes": {
+    "6901": {
+      "label": "Linux desktop (noVNC)",
+      "protocol": "https"
+    }
+  },
+  "postStartCommand": "docker compose up -d"
+}
