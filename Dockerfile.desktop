@@ -1,7 +1,8 @@
 FROM kasmweb/ubuntu-jammy-desktop:1.17.0
 
 USER root
-RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends dosbox \
+RUN find /etc/apt/sources.list.d -type f -exec grep -l 'apt.releases.hashicorp.com' {} + | xargs -r rm -f \
+    && apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends dosbox libsdl-sound1.2 \
     && rm -rf /var/lib/apt/lists/*
 USER kasm-user
